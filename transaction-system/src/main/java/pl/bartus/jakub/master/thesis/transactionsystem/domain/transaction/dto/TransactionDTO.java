@@ -1,0 +1,25 @@
+package pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.dto;
+
+import lombok.Builder;
+import lombok.Data;
+import lombok.Value;
+import pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.enumerated.TransactionStatus;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+
+@Builder
+@Value
+public class TransactionDTO {
+    UUID userId;
+    UUID transactionId;
+    LocalDateTime createdAt;
+    LocalDateTime updatedAt;
+    TransactionStatus status;
+    BigDecimal xmrAmount;
+    Integer coins;
+    String userWalletAddress;
+    String blockchainTxHash;
+}

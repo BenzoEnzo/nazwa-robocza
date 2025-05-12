@@ -14,10 +14,15 @@ import java.util.UUID;
 @NoArgsConstructor
 public class UserAuthService {
 
+    public UUID getUserId(){
+        return UUID.fromString(getClaim(getCurrentAuthentication(),"sub"));
+    }
+
     public UserDTO getUserInfo(){
         JwtAuthenticationToken token = getCurrentAuthentication();
 
         return UserDTO.builder()
+                .id(UUID.fromString(getClaim(token, "sub")))
                 .group(getUserGroup(token))
                 .firstName(getClaim(token,"given_name"))
                 .lastName(getClaim(token, "family_name"))
@@ -39,7 +44,6 @@ public class UserAuthService {
     }
 
     private <T> T getClaim(JwtAuthenticationToken auth, String claim){
-
         return auth.getToken().getClaim(claim);
     }
 }

@@ -6,21 +6,29 @@ services:
       KC_DB: postgres
       KC_DB_USERNAME: user
       KC_DB_PASSWORD: pass
-      KC_DB_URL: jdbc:postgresql://thesis_postgres:5432/thesis
+      KC_DB_URL: jdbc:postgresql://iam_postgres:5432/iam
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin
     ports:
       - "8082:8080"
-    command: -v start-dev --import-realm
-    volumes:
-      - ./keycloak:/opt/keycloak/data/import
+    command: -v start-dev
 
-  postgres:
+  postgres_transactions:
     image: postgres:latest
-    container_name: thesis_postgres
+    container_name: transactions_postgres
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
-      POSTGRES_DB: thesis
+      POSTGRES_DB: transactions
     ports:
       - "5432:5432"
+
+  postgres_iam:
+    image: postgres:latest
+    container_name: iam_postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: iam
+    ports:
+      - "5433:5432"
