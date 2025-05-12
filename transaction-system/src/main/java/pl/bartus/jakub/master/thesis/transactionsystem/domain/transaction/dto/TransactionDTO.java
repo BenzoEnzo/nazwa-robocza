@@ -1,7 +1,6 @@
 package pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.dto;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Value;
 import pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.enumerated.TransactionStatus;
 
@@ -14,7 +13,7 @@ import java.util.UUID;
 @Value
 public class TransactionDTO {
     UUID userId;
-    UUID transactionId;
+    Long transactionId;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
     TransactionStatus status;

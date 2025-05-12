@@ -1,6 +1,6 @@
 package pl.bartus.jakub.master.thesis.transactionsystem.domain.user.service;
 
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
@@ -11,7 +11,7 @@ import pl.bartus.jakub.master.thesis.transactionsystem.domain.user.enumerated.Us
 import java.util.UUID;
 
 @Service
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class UserAuthService {
 
     public UUID getUserId(){
