@@ -6,9 +6,9 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum UserGroup {
-    USER("DEFAULT",0),
-    ADMIN("ADMIN", 1),
+    DEFAULT("DEFAULT",0),
+    USER("USER",1),
     SYSTEM("SYSTEM", 2);
-    private final String role;
+    private final String name;
     private final Integer accessLevel;
 }

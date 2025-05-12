@@ -18,7 +18,6 @@ public class UserAuthService {
         JwtAuthenticationToken token = getCurrentAuthentication();
 
         return UserDTO.builder()
-                .id(UUID.fromString(getClaim(token,"uuid")))
                 .group(getUserGroup(token))
                 .firstName(getClaim(token,"given_name"))
                 .lastName(getClaim(token, "family_name"))
@@ -40,6 +39,7 @@ public class UserAuthService {
     }
 
     private <T> T getClaim(JwtAuthenticationToken auth, String claim){
+
         return auth.getToken().getClaim(claim);
     }
 }
