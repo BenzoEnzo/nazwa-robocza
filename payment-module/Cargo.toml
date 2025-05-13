@@ -4,9 +4,19 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+axum = { version = "0.8.4", features = ["macros", "json", "tokio", "http1"] }
 monero = "0.21.0"
 monero-rpc = { version = "0.4.0", features = ["rpc_authentication",] }
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
+reqwest = { version = "0.12.15", features = ["json", "rustls-tls"] }
 anyhow = "1.0.98"
 dotenv = "0.15.0"
+tracing = "0.1.5"
+tracing-subscriber = { version = "0.3.4", features = ["fmt", "ansi"] }
+tonic       = { version = "0.13", features = ["transport"] }
+prost       = "0.13"
+prost-types = "0.13" # Timestamp
+
+[build-dependencies]
+tonic-build = "0.13.1"

@@ -1,12 +1,12 @@
-package pl.bartus.jakub.master.thesis.transactionsystem.domain.user.service;
+package pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.stereotype.Service;
-import pl.bartus.jakub.master.thesis.transactionsystem.domain.user.dto.UserDTO;
-import pl.bartus.jakub.master.thesis.transactionsystem.domain.user.enumerated.UserGroup;
+import pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.dto.UserDTO;
+import pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.enumerated.UserGroup;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package pl.bartus.jakub.master.thesis.transactionsystem.domain.user.enumerated;
+package pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.enumerated;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

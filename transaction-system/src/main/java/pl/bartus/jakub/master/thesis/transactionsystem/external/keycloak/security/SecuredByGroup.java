@@ -1,6 +1,6 @@
-package pl.bartus.jakub.master.thesis.transactionsystem.security;
+package pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.security;
 
-import pl.bartus.jakub.master.thesis.transactionsystem.domain.user.enumerated.UserGroup;
+import pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.enumerated.UserGroup;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

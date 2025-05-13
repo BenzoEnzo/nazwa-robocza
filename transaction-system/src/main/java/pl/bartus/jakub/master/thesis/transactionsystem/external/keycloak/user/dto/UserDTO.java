@@ -1,8 +1,8 @@
-package pl.bartus.jakub.master.thesis.transactionsystem.domain.user.dto;
+package pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.dto;
 
 import lombok.Builder;
 import lombok.Data;
-import pl.bartus.jakub.master.thesis.transactionsystem.domain.user.enumerated.UserGroup;
+import pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.enumerated.UserGroup;
 
 import java.util.UUID;
 

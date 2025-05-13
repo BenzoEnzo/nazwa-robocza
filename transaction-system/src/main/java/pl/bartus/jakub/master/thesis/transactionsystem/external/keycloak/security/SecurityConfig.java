@@ -1,4 +1,4 @@
-package pl.bartus.jakub.master.thesis.transactionsystem.security;
+package pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.security;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationProvider;
 import org.springframework.security.oauth2.server.resource.authentication.JwtIssuerAuthenticationManagerResolver;
 import org.springframework.security.web.SecurityFilterChain;
-import pl.bartus.jakub.master.thesis.transactionsystem.domain.user.enumerated.UserGroup;
+import pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.enumerated.UserGroup;
 
 import java.util.HashMap;
 import java.util.List;

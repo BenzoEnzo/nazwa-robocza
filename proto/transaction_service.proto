@@ -1,0 +1,37 @@
+// transaction_service.proto
+syntax = "proto3";
+
+package pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto;
+
+import "google/protobuf/timestamp.proto";
+
+enum TransactionStatus {
+  TRANSACTION_STATUS_UNSPECIFIED = 0;
+  NEW      = 1;
+  PENDING  = 2;
+  SUCCESS  = 3;
+  FAILED   = 4;
+}
+
+message TransactionRequest {
+  string user_id               = 1;
+  int64 transaction_id = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp      updated_at     = 4;
+  TransactionStatus              status         = 5;
+  string                         xmr_amount     = 6;
+  int32                          coins          = 7;
+  string                         user_wallet_address = 8;
+  optional string                blockchain_tx_hash = 9;
+}
+
+message PaymentAddressResponse {
+  string  server_wallet_address = 1;
+  string  price_in_xmr          = 2;
+  int32   coins                 = 3;
+}
+
+service TransactionService {
+  rpc CreateTransaction (TransactionRequest)
+      returns (PaymentAddressResponse);
+}
