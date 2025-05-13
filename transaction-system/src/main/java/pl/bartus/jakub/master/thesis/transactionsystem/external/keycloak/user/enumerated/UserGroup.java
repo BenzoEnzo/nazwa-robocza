@@ -1,10 +1,10 @@
 package pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.enumerated;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public enum UserGroup {
     DEFAULT("DEFAULT",0),
     USER("USER",1),

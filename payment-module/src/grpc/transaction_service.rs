@@ -1,15 +1,14 @@
 use tonic::{Request, Response, Status};
-use std::time::{SystemTime, UNIX_EPOCH};
 
 pub mod proto {
     tonic::include_proto!(
-        "pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto"
+        "pl.bartus.jakub.master.thesis.transactionsystem"
     );
 }
 
 use proto::{
     transaction_service_server::{TransactionService, TransactionServiceServer},
-    TransactionRequest, PaymentAddressResponse,
+    TransactionRequest, PaymentAddressResponse,TransactionStatus
 };
 
 #[derive(Default)]
@@ -23,14 +22,11 @@ impl TransactionService for MyTransactionService {
     ) -> Result<Response<PaymentAddressResponse>, Status> {
         let req = request.into_inner();
 
-        // For example purposes: build a response
-        let now = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .unwrap();
         let resp = PaymentAddressResponse {
             server_wallet_address: "chuj".into(),
             price_in_xmr: "777".into(),
             coins: req.coins,
+            status: TransactionStatus::Processing.into(),
             ..Default::default()
         };
         Ok(Response::new(resp))

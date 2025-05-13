@@ -6,7 +6,7 @@ import io.grpc.ManagedChannelBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto.TransactionServiceGrpc;
+import pl.bartus.jakub.master.thesis.transactionsystem.TransactionServiceGrpc;
 
 @Configuration
 public class GrpcClientConfig {

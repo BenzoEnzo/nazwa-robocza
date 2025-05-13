@@ -3,13 +3,14 @@ package pl.bartus.jakub.master.thesis.transactionsystem.api.mapper;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import pl.bartus.jakub.master.thesis.transactionsystem.TransactionServiceOuterClass;
 import pl.bartus.jakub.master.thesis.transactionsystem.api.dto.PaymentAddressDTO;
 import pl.bartus.jakub.master.thesis.transactionsystem.api.dto.TransactionDTO;
 import pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.entity.Transaction;
+import pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.enumerated.TransactionStatus;
 import pl.bartus.jakub.master.thesis.transactionsystem.external.keycloak.user.service.UserAuthService;
-import pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto.TransactionServiceOuterClass;
 
-@Mapper(componentModel="spring")
+@Mapper(componentModel="spring",uses =  {TransactionStatus.class})
 public interface TransactionMapper {
 
     @Mapping(target = "id", ignore = true)
@@ -43,6 +44,7 @@ public interface TransactionMapper {
     @Mapping(target = "priceInXMR",
             expression = "java(new BigInteger(response.getPriceInXmr()))")
     @Mapping(target = "coins", source = "response.coins")
+    @Mapping(target = "status", source = "response.status")
     PaymentAddressDTO mapToGrpcResp(
             TransactionServiceOuterClass.PaymentAddressResponse response
     );

@@ -10,7 +10,6 @@ use grpc::transaction_service::create_payment;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     dotenv().ok();
 
-
     let addr: SocketAddr = env::var("SERVER_ADDRESS").unwrap().parse()?;
     println!("TransactionService listening on {}", addr);
 

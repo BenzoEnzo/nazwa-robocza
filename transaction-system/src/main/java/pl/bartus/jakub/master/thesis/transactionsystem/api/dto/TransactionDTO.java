@@ -1,6 +1,7 @@
 package pl.bartus.jakub.master.thesis.transactionsystem.api.dto;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
 import lombok.Builder;
 import lombok.Value;
 import pl.bartus.jakub.master.thesis.transactionsystem.domain.transaction.enumerated.TransactionStatus;
@@ -12,9 +13,9 @@ import java.util.UUID;
 @Builder
 @Value
 public class TransactionDTO {
-    UUID userId;
-    Long transactionId;
-    LocalDateTime createdAt;
+    @Null UUID userId;
+    @Null Long transactionId;
+    @Null LocalDateTime createdAt;
     LocalDateTime updatedAt = LocalDateTime.now();
     @NotNull
     TransactionStatus status;

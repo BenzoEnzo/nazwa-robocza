@@ -1,16 +1,15 @@
 // transaction_service.proto
 syntax = "proto3";
 
-package pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto;
+package pl.bartus.jakub.master.thesis.transactionsystem;
 
 import "google/protobuf/timestamp.proto";
 
 enum TransactionStatus {
-  TRANSACTION_STATUS_UNSPECIFIED = 0;
-  NEW      = 1;
-  PENDING  = 2;
-  SUCCESS  = 3;
-  FAILED   = 4;
+  PENDING = 0;
+  PROCESSING  = 1;
+  SUCCESS  = 2;
+  FAILED   = 3;
 }
 
 message TransactionRequest {
@@ -29,6 +28,7 @@ message PaymentAddressResponse {
   string  server_wallet_address = 1;
   string  price_in_xmr          = 2;
   int32   coins                 = 3;
+  TransactionStatus status = 4;
 }
 
 service TransactionService {

@@ -2,8 +2,8 @@ package pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.client;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto.TransactionServiceGrpc;
-import pl.bartus.jakub.master.thesis.transactionsystem.external.grpc.proto.TransactionServiceOuterClass;
+import pl.bartus.jakub.master.thesis.transactionsystem.TransactionServiceGrpc;
+import pl.bartus.jakub.master.thesis.transactionsystem.TransactionServiceOuterClass;
 
 @Service
 @RequiredArgsConstructor

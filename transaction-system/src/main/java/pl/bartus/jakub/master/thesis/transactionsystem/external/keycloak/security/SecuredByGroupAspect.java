@@ -26,10 +26,6 @@ public class SecuredByGroupAspect {
                 .findFirst()
                 .orElse(UserGroup.DEFAULT.getAccessLevel());
 
-        if (securedByGroup.value().getAccessLevel() > userAccessLevel) {
-
-        }
-
         return joinPoint.proceed();
     }
 
